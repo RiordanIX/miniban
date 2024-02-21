@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+.column {
+    flex: 1;
+    background-color: #f4f4f4;
+    padding: 20px;
+    padding-bottom: 50px;
+    border-radius: 5px;
+}
+
+.task {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: move; /* Indicate draggability */
+}
+
+.description {
+    padding: 10px;
+}
+
+#taskName {
+	width: 100%;
+}
+#taskDescription {
+	width: 100%;
+}
+input[type=submit] {
+	float: right;
+}
