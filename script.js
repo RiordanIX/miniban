@@ -49,7 +49,9 @@ function addTask(taskName, taskDescription) {
 
     newTask.onclick = e => {makeVisible(desc.id)}
 
-    newTask.appendChild(desc);
+    const taskText = document.createElement('span');
+    taskText.textContent = taskName;
+    newTask.appendChild(taskText);
 
     taskCounter++;
     columns[0].appendChild(newTask); // Add to the "To Do" column
@@ -75,6 +77,14 @@ function loadTasks() {
       description.classList.add('description');
       description.style.display = "none";
       description.textContent = task.description;
+
+
+      const taskText = document.createElement('span');
+      taskText.textContent = task.name;
+      taskElement.appendChild(taskText);
+
+
+
       taskElement.appendChild(description);
 
       taskElement.onclick = e => {makeVisible(description.id)}
@@ -92,7 +102,7 @@ function saveTasks() {
       //console.log(document.getElementById(`${taskElement.id}-description`))
       //console.log(taskElement);
       tasks.push({
-        name: taskElement.innerText,
+        name: taskElement.querySelector('span').textContent,
         column: column.id,
         id: taskElement.id,
         description: document.getElementById(`${taskElement.id}-description`).textContent
